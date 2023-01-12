@@ -3,6 +3,7 @@ package com.example.Controller;
 import com.example.Dto.StudentDto;
 import com.example.Model.StudentDao;
 import com.example.Service.StudentService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
@@ -34,12 +35,12 @@ public class StudentController {
     }
 
     @PostMapping("/addStudent")
-    public StudentDto saveStudent(@RequestBody StudentDto studentDto){
+    public StudentDto saveStudent(@Valid @RequestBody StudentDto studentDto){
         return studentService.saveStudent(studentDto);
     }
 
     @PutMapping("/updateStudent/{id}")
-    public StudentDto updateStudent(@PathVariable("id") int id, @RequestBody StudentDto studentDto) {
+    public StudentDto updateStudent(@Valid @PathVariable("id") int id, @RequestBody StudentDto studentDto) {
         return studentService.updateStudent(id,studentDto);
     }
 
