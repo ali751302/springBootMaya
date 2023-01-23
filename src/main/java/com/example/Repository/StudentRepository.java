@@ -8,6 +8,6 @@ import java.util.Optional;
 
 @Repository
 public interface StudentRepository extends JpaRepository<StudentDao, Integer> {
-    Optional<StudentDao> findByRegistration(String registration);
+    Optional<StudentDao> findByRegistrationContainingIgnoreCase(String registration);
 
 }

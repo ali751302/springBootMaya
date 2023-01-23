@@ -1,11 +1,13 @@
 package com.example.Controller;
 
 import com.example.Dto.StudentDto;
+import com.example.Dto.StudentResponseDto;
 import com.example.Model.StudentDao;
 import com.example.Service.StudentService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatusCode;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,33 +21,43 @@ public class StudentController {
     @Autowired
     StudentService studentService;
 
+    @CrossOrigin
     @GetMapping("/getStudents")
-    public List<StudentDto> getStudents(){
+    public List<StudentResponseDto> getStudents(){
         return studentService.getStudents();
     }
 
     @GetMapping("/getStudent/{id}")
-    public StudentDto getStudentById(@PathVariable("id") int id){
+    public StudentResponseDto getStudentById(@PathVariable("id") int id){
         return studentService.getStudentById(id);
     }
 
     @GetMapping("/getStudent")
-    public StudentDto getStudentByRegistration(@RequestParam("reg") String registration){
+    public StudentResponseDto getStudentByRegistration(@RequestParam("reg") String registration){
         return studentService.getStudentByRegistration(registration);
     }
 
-    @PostMapping("/addStudent")
-    public StudentDto saveStudent(@Valid @RequestBody StudentDto studentDto){
+    @CrossOrigin
+    @PostMapping(value = "/addStudent")
+
+    public StudentResponseDto saveStudent(@Valid @RequestBody StudentDto studentDto){
         return studentService.saveStudent(studentDto);
     }
 
+    @CrossOrigin
     @PutMapping("/updateStudent/{id}")
-    public StudentDto updateStudent(@Valid @PathVariable("id") int id, @RequestBody StudentDto studentDto) {
+    public StudentResponseDto updateStudent(@Valid @PathVariable("id") int id, @RequestBody StudentDto studentDto) {
         return studentService.updateStudent(id,studentDto);
     }
 
+    @CrossOrigin
     @DeleteMapping("/deleteStudent/{id}")
     public HashMap<String,String> deleteStudentById(@PathVariable("id") int id){
         return studentService.deleteStudentById(id);
     }
+
+//    @PatchMapping("/updateStudentData/{id}")
+//    public StudentResponseDto updateStudentData(@Valid @PathVariable("id") int id,@Valid @RequestBody StudentDto studentDto) {
+//        return studentService.updateStudentData(id,studentDto);
+//    }
 }

@@ -12,6 +12,7 @@ public class StudentDao {
     String registration;
     String fName;
     String lName;
+    String email;
 
     public StudentDao(){
 
@@ -21,6 +22,7 @@ public class StudentDao {
         this.fName = studentDto.getFirstName();
         this.lName = studentDto.getLastName();
         this.registration = studentDto.getRegistration();
+        this.email = studentDto.getEmail();
     }
 
 
@@ -50,6 +52,14 @@ public class StudentDao {
 
     public String getlName() {
         return lName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public void setlName(String lName) {
