@@ -1,7 +1,5 @@
 package com.example.Dto;
 
-import com.example.Model.CourseDao;
-
 public class CourseDto {
     String courseCode;
     String courseName;

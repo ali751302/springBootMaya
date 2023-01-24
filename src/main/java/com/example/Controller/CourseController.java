@@ -2,8 +2,6 @@ package com.example.Controller;
 
 import com.example.Dto.CourseDto;
 import com.example.Dto.CourseResponseDto;
-import com.example.Dto.StudentDto;
-import com.example.Dto.StudentResponseDto;
 import com.example.Service.CourseService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
