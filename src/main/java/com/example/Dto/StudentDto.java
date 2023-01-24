@@ -1,11 +1,7 @@
 package com.example.Dto;
 
 import com.example.Model.StudentDao;
-import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
-import org.springframework.validation.annotation.Validated;
-
-import java.util.Objects;
 
 
 public class StudentDto {
