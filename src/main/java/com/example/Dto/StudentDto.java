@@ -1,13 +1,15 @@
 package com.example.Dto;
 
 import com.example.Model.StudentDao;
-import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
-import org.springframework.validation.annotation.Validated;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
-import java.util.Objects;
 
-
+@Getter
+@Setter
+@ToString
 public class StudentDto {
     @Pattern(regexp = "^(L1|l1)([s|f]|[S|F])[0-9]{2}([a-z]|[A-Z]){4}[0-9]{4}$",
             message = "Invalid Registration Number Sequence")
@@ -24,72 +26,22 @@ public class StudentDto {
     @Email(message = "Invalid Email Sequence")
     String email;
 
-    public StudentDto() {
-    }
 
-    public StudentDto(StudentDao studentDao){
-        this.firstName = studentDao.getfName();
-        this.lastName = studentDao.getlName();
-        this.registration = studentDao.getRegistration();
-        this.email = studentDao.getEmail();
-    }
-
-    public String getRegistration() {
-        return registration;
-    }
-
-    public void setRegistration(String registration) {
-        this.registration = registration;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public StudentDto assignValue(StudentDto request)
-    {
-        if(request.getFirstName() != null){
-            this.setFirstName(request.getFirstName());
-        }
-        if(request.getLastName() != null){
-            this.setLastName(request.getLastName());
-        }
-        if(request.getRegistration() != null){
-            this.setRegistration(request.getRegistration());
-        }
-        if(request.getEmail() != null){
-            this.setEmail(request.getEmail());
-        }
-        return request;
-    }
-    @Override
-    public String toString() {
-        return "StudentDto{" +
-                "registration='" + registration + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
-                '}';
-    }
+//    public StudentDto assignValue(StudentDto request)
+//    {
+//        if(request.getFirstName() != null){
+//            this.setFirstName(request.getFirstName());
+//        }
+//        if(request.getLastName() != null){
+//            this.setLastName(request.getLastName());
+//        }
+//        if(request.getRegistration() != null){
+//            this.setRegistration(request.getRegistration());
+//        }
+//        if(request.getEmail() != null){
+//            this.setEmail(request.getEmail());
+//        }
+//        return request;
+//    }
 
 }
