@@ -2,7 +2,9 @@ package com.example.Service;
 
 import com.example.Dto.CourseDto;
 import com.example.Dto.CourseResponseDto;
+import com.example.Dto.StudentResponseDto;
 import com.example.Model.CourseDao;
+import com.example.Model.StudentDao;
 import com.example.Repository.CourseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
