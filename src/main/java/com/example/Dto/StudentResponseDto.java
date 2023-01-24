@@ -1,7 +1,6 @@
 package com.example.Dto;
 
 import com.example.Model.StudentDao;
-import jakarta.validation.constraints.*;
 
 public class StudentResponseDto {
     long id;

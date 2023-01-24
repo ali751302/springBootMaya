@@ -2,18 +2,13 @@ package com.example.Controller;
 
 import com.example.Dto.StudentDto;
 import com.example.Dto.StudentResponseDto;
-import com.example.Model.StudentDao;
 import com.example.Service.StudentService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatusCode;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "/api")

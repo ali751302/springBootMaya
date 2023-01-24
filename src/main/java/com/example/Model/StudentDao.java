@@ -3,16 +3,21 @@ package com.example.Model;
 import com.example.Dto.StudentDto;
 import jakarta.persistence.*;
 
+import java.util.Set;
+
 @Entity
 @Table(name = "Student")
 public class StudentDao {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "student_id")
     Integer id;
     String registration;
     String fName;
     String lName;
     String email;
+    @OneToMany(mappedBy = "student")
+    Set<CourseRegistration> registrations;
 
     public StudentDao(){
 
@@ -25,6 +30,13 @@ public class StudentDao {
         this.email = studentDto.getEmail();
     }
 
+    public Set<CourseRegistration> getRegistrations() {
+        return registrations;
+    }
+
+    public void setRegistrations(Set<CourseRegistration> registrations) {
+        this.registrations = registrations;
+    }
 
     public Integer getId() {
         return id;
