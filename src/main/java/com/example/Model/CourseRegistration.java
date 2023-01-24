@@ -1,11 +1,15 @@
 package com.example.Model;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "course_registration")
+@Getter
+@Setter
 public class CourseRegistration {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,46 +24,4 @@ public class CourseRegistration {
     CourseDao course;
 
     LocalDateTime registeredAt;
-
-    int grade;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public StudentDao getStudent() {
-        return student;
-    }
-
-    public void setStudent(StudentDao student) {
-        this.student = student;
-    }
-
-    public CourseDao getCourse() {
-        return course;
-    }
-
-    public void setCourse(CourseDao course) {
-        this.course = course;
-    }
-
-    public LocalDateTime getRegisteredAt() {
-        return registeredAt;
-    }
-
-    public void setRegisteredAt(LocalDateTime registeredAt) {
-        this.registeredAt = registeredAt;
-    }
-
-    public int getGrade() {
-        return grade;
-    }
-
-    public void setGrade(int grade) {
-        this.grade = grade;
-    }
 }
