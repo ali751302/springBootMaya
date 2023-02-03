@@ -23,7 +23,7 @@ public class StudentDao {
     String lName;
     String email;
     @OneToMany(mappedBy = "student")
-    Set<CourseRegistration> registrations;
+    Set<CourseRegistrationDao> registrations;
 
 
     public StudentDao(StudentDto studentDto){

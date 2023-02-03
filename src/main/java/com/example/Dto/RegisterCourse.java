@@ -1,13 +1,13 @@
 package com.example.Dto;
 
-import lombok.Data;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 
-@Data
-public class CourseRegistrationDto {
-    Integer student;
-    Integer course;
+@Getter
+@Setter
+public class RegisterCourse {
+    CourseResponseDto course;
     LocalDateTime registeredAt;
 }
