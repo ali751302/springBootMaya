@@ -22,7 +22,7 @@ public class CourseDao {
     String courseName;
     Float creditHours;
     @OneToMany(mappedBy = "course")
-    Set<CourseRegistration> registrations;
+    Set<CourseRegistrationDao> registrations;
 
     public CourseDao(CourseDto courseDto) {
         this.courseCode=courseDto.getCourseCode();

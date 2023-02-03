@@ -1,9 +1,13 @@
 package com.example.Dto;
 
+import com.example.Model.CourseRegistrationDao;
 import com.example.Model.StudentDao;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -14,6 +18,7 @@ public class StudentResponseDto {
     String firstName;
     String lastName;
     String email;
+
 
     public StudentResponseDto(StudentDao studentDao){
         this.id = studentDao.getId();
